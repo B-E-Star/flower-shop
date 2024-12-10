@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Bliss shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f8b6c8;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            color: white;
+            margin: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: #555;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f8b6c8;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Bloom & Bliss Flower Shop</h1>
+    </header>
+
+    <div class="container">
+        {% for flower in flowers %}
+        <div class="card">
+            <img src="{{ flower.image }}" alt="{{ flower.name }}">
+            <h2>{{ flower.name }}</h2>
+            <p>Price: {{ flower.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bloom & Bliss Flower Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>
